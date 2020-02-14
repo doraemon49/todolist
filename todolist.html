@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/fe59766ddf.js" crossorigin="anonymous"></script>
+    <style>
+        .wrap{width: 300px;}
+        .main{background-color: gold;
+            height: 1000px;}
+        h1{color: white;}
+        .plus{background-color: orange;}
+        .list{background-color: white;}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>To Do List</h1>
+        <div class="plus wrap">
+            <input type="text" id="add">
+            <button onclick="add();"><i class="fas fa-plus-circle"></i></button>
+        </div>
+        <div class="list wrap">
+            <table id="table">
+                <tr>
+                    <td>밥먹기</td>
+                    <td><i class="fas fa-trash"></i></td>
+                </tr>
+                <tr>
+                    <td>운동하기</td>
+                    <td><i class="fas fa-trash"></i></td>
+                </tr>
+                <tr>
+                    <td>씻기</td>
+                    <td><i class="fas fa-trash"></i></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        window.onload=function(){
+            
+        }
+        function add(){
+           var input=document.getElementById("add").value;
+           var tr=document.createElement("tr");
+           var tdContent =document.createElement("td");
+           var tdIcon=document.createElement("td");
+           tdContent.innerHTML=input;
+           tdIcon.innerHTML='<i class="fas fa-trash"></i>'; 
+           tr.appendChild(tdContent);
+           tr.appendChild(tdIcon);
+            var table=document.getElementById("table");
+            table.appendChild(tr);
+            document.getElementById("add").value='';
+         }
+    </script>
+</body>
+</html>
